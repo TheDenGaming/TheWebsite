@@ -1,8 +1,9 @@
 import { React, useState } from 'react'
-import Logo from '../assets/TDG.PNG'
-import { Link } from 'react-router-dom'
+import Logo from '../assets/TDG-Letters.PNG'
+import { Link, NavLink } from 'react-router-dom'
 import ReorderIcon from '@material-ui/icons/Reorder';
 import '../styles/NavBar/navbar.scss'
+
 
 export default function Nabar() {
 
@@ -15,23 +16,24 @@ export default function Nabar() {
     return (
         <div className='navbar'>
             <div className='leftSide' id={openLinks ? "open" : "close"}>
-                <Link to='/'><img src={Logo} /></Link>
+                <NavLink to='/'><img src={Logo} /></NavLink>
                 <div className='hiddenLinks'>
-                    <Link to="/products"> Products </Link>
-                    <Link to="/Team"> Team </Link>
-                    <Link to="/Blog"> Blog </Link>
-                    <Link to="/Careers"> Careers </Link>
+                    <NavLink to="/products"> Products </NavLink>
+                    <NavLink to="/Team"> Team </NavLink>
+                    <NavLink to="/Blog"> Blog </NavLink>
+                    <NavLink to="/Careers"> Careers </NavLink>
                 </div>
             </div>
             <div className='rightSide'>
-                <Link to="/products"> Products </Link>
-                <Link to="/Team"> Team </Link>
-                <Link to="/Blog"> Blog </Link>
-                <Link to="/Careers"> Careers </Link>
+                <NavLink to="/products"> Products </NavLink>
+                <NavLink to="/Team"> Team </NavLink>
+                <NavLink to="/Blog"> Blog </NavLink>
+                <NavLink to="/Careers"> Careers </NavLink>
                 <button onClick={toggleNavbar}>
                     <ReorderIcon />
                 </button>
             </div>
         </div>
+
     )
 }
